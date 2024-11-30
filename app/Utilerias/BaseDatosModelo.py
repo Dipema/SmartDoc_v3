@@ -52,8 +52,8 @@ class PostgresBase():
         if self._cursor:
             try:
                 self._cursor.execute(query, (datos) or ())
-            except:
-                raise Exception("No se han encontrado datos con los parametros indicados")
+            except Exception as ex:
+                raise Exception(str(ex))
         else:
             raise Exception("No se ha establecido un cursor.")
 

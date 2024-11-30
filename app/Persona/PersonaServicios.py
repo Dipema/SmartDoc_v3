@@ -1,4 +1,4 @@
-from app.BBDD.BaseDatosModelo import PostgresBase
+from app.Utilerias.BaseDatosModelo import PostgresBase, RedisBase
 
 class PersonaSvos():
     @classmethod

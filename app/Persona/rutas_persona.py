@@ -1,6 +1,6 @@
 from . import bp_personas
 from .PersonaServicios import PersonaSvos
-from app.Empresa.EmpresaServicios import EmpresaSvos
+from app.Empresa.empresaSvosBD import EmpresaSvos
 from .PersonaModelo import Persona
 
 from flask import current_app, request

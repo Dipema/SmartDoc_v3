@@ -1,7 +1,14 @@
-from flask import Flask, current_app
+from flask import Flask
+from .Bitacora import bp_bitacora
 from .Documento import bp_documento
+from .Emp_Areas import bp_empresa_area
+from .Emp_Plantillas import bp_empresa_plantilla
+from .Emp_Procesos import bp_empresa_proceso
 from .Empresa import bp_empresas
-from .Persona import bp_personas
+from .Procesos import bp_proceso
+#from .Persona import bp_personas
+from .Seguridad import bp_seguridad
+from .Usuario import bp_usuarios
 
 def crear_app():
     app = Flask(__name__)
@@ -13,9 +20,16 @@ def crear_app():
 
 
     # DAMOS DE ALTA TODOS LOS DISTINTOS BLUEPRINTS DE LA APP
+    app.register_blueprint(bp_bitacora)
     app.register_blueprint(bp_documento)
+    app.register_blueprint(bp_empresa_area)
+    app.register_blueprint(bp_empresa_plantilla)
+    app.register_blueprint(bp_empresa_proceso)
     app.register_blueprint(bp_empresas)
-    app.register_blueprint(bp_personas)
+    app.register_blueprint(bp_proceso)
+    #app.register_blueprint(bp_personas)
+    app.register_blueprint(bp_seguridad)
+    app.register_blueprint(bp_usuarios)
     
     @app.route('/')
     def hello_world():
